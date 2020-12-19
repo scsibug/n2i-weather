@@ -5,7 +5,7 @@ COPY . .
 RUN cargo install --path .
 
 # generate clean, final image for end users
-FROM golang:1.15
+FROM rust:1.48
 COPY --from=builder /usr/src/n2i-weather/target/release/n2i-weather .
 
 # executable
