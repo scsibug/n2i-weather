@@ -104,7 +104,7 @@ async fn main() {
             uvi: uvi,
             visibility: visibility,
             clouds: clouds,
-            zipcode: "76021".to_string()
+            zipcode: "76034".to_string()
         }; 
         let write_result = client
             .query(&wr.into_query("weather")).await;
