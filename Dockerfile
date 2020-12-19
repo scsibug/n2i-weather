@@ -5,8 +5,10 @@ COPY . .
 RUN cargo install --path .
 
 # generate clean, final image for end users
-FROM busybox:glibc
-COPY --from=builder /usr/src/n2i-weather/target/release/n2i-weather .
+FROM debian:stable-slim
+RUN apt-get update && \
+        apt-get install -y libssl-dev && \
+        rm -rf /var/lib/apt/lists/*
 
 # executable
 ENTRYPOINT [ "./n2i-weather" ]
