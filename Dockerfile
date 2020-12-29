@@ -10,6 +10,8 @@ RUN apt-get update && \
         apt-get install -y libssl-dev && \
         rm -rf /var/lib/apt/lists/*
 
+COPY --from=builder /usr/src/n2i-weather/target/release/n2i-weather .
+
 # executable
 ENTRYPOINT [ "./n2i-weather" ]
 
