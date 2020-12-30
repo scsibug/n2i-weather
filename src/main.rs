@@ -88,7 +88,7 @@ async fn main() {
         // uvi
         let uvi = mainobj.get("uvi").unwrap().as_f64().unwrap();
         // clouds
-        let clouds = mainobj.get("uvi").unwrap().as_f64().unwrap();
+        let clouds = mainobj.get("clouds").unwrap().as_f64().unwrap();
         // parse the data payload
         let dt = Utc.timestamp(mainobj.get("dt").unwrap().as_i64().unwrap(), 0); 
         println!("{}", dt);
